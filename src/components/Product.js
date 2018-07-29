@@ -1,15 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import { Link } from 'react-router-dom'
 const ProductImg = styled.img`
   width: 100%;
   height: 200px;
   object-fit: cover;
 `
 
-const Container = styled.div`
+const Container = styled(Link)`
   padding: 10px;
   position: relative;
+  display: block;
 `
 
 const ProductInfos = styled.div`
@@ -23,8 +24,8 @@ const ProductInfos = styled.div`
   padding: 10px;
 `
 
-const Product = ({ src, alt, title }) => (
-  <Container>
+const Product = ({ id, src, alt, title }) => (
+  <Container to={`/etiquettes/${id}`}>
     <ProductImg src={src} alt={alt} />
     <ProductInfos>
       {title}

@@ -87,7 +87,7 @@ class MenuAppBar extends React.Component {
        
         <AppBar position="static" style={{ backgroundColor: '#009688' }}>
           <Toolbar>
-          <IconButton href="/Home" className={classes.menuButton} color="inherit" aria-label="Menu">
+            <IconButton href="/" className={classes.menuButton} color="inherit" aria-label="Menu">
             <HomeIcon /> 
             </IconButton>                   
             <Typography variant="title" color="inherit" className={classes.flex}>
@@ -101,7 +101,7 @@ class MenuAppBar extends React.Component {
               Plantes
             </Typography>
 
-            <IconButton href='/Label' className={classes.menuButton} color="inherit" aria-label="Menu">     
+            <IconButton href='/label' className={classes.menuButton} color="inherit" aria-label="Menu">     
               <Label />
               </IconButton>  
               <Typography variant="title" color="inherit" className={classes.flex}>

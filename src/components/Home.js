@@ -42,20 +42,16 @@ const styles = theme => ({
 
 });
 
-const ProductImg = styled.img`
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-`
 
 const tileData = [
   {
+    id: 1,
     img: fleurblancheverte,
     title: 'fleur blanche et verte',
     featured: true,
    },
    {
-   
+    id:2,
     img: fleurblanche,
     author: 'author',
     featured: true,
@@ -65,17 +61,20 @@ const tileData = [
    },
 
    {
+    id:3,
     img: EtiquetteRonde,
     title: 'Etiquette Ronde',
     author: 'author',
    },
 
    {
+    id:4,
     img: EtiquetteArdoise,
     title: 'Etiquette Ardoise',
     author: 'author',
    },
    {
+     id:5,
     img: EtiquetteGraveeVerte,
     title: 'Etiquette Gravée Verte',
     author: 'author',
@@ -83,11 +82,11 @@ const tileData = [
 
    },
    {
+     id:6,
     img: planteEtiquette,
     title: 'Plante étiquettée',
     author: 'author',
-    featured: true,
-
+    featured: true
    },
  ];
 
@@ -108,10 +107,10 @@ const Home = (props) => {
         ))}
       </GridList> */}
       <Grid container spacing={24}>
-        {tileData.map(tile => (
+        {tileData.map(tile => console.log(tile) || (
             <Grid item xs={3}>
               <Paper className={classes.paper}>
-              <Product src={tile.img} alt={tile.title} title={tile.title} />
+              <Product id={tile.id} src={tile.img} alt={tile.title} title={tile.title} />
               </Paper>
             </Grid>
         ))}
