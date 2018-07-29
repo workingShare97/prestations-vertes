@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Welcome from '../components/Welcome';
+import Home from '../components/Home';
 import Register from '../components/Register';
 import Login from '../components/Login';
 import Logout from '../components/Logout';
@@ -22,7 +22,7 @@ class Layout extends Component {
                     <React.Fragment>
                         <MenuAppBar/>
                         <Switch>
-                            <Route exact path='/Welcome' component={Welcome}/>
+                            <Route exact path='/' component={Home}/>
                             <Route exact path='/Login' component={Login} />
                             <Route exact path='/Logout' component={Logout} />
                             <Route exact path='/Register' component={Register} />

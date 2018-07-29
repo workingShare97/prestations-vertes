@@ -2,12 +2,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
-import IconButton from '@material-ui/core/IconButton';
-import StarBorderIcon from '@material-ui/icons/StarBorder';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import styled from 'styled-components'
 //import tileData from 'tileData';
+
+import Product from './Product'
 
 import fleurblanche from '../images/fleurblanche.jpg';
 import fleurblancheverte from '../images/fleurblancheverte.jpg';
@@ -24,7 +24,9 @@ const styles = theme => ({
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     overflow: 'hidden',
-    backgroundColor: theme.palette.background.paper,
+    maxWidth: 1200,
+    margin: '0 auto',
+    padding: '40px 0'
   },
   gridList: {
     width: '50%',
@@ -39,6 +41,12 @@ const styles = theme => ({
   },
 
 });
+
+const ProductImg = styled.img`
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+`
 
 const tileData = [
   {
@@ -83,12 +91,12 @@ const tileData = [
    },
  ];
 
-function AdvancedGridList(props) {
+const Home = (props) => {
   const { classes } = props;
 
   return (
     <div className={classes.root}>
-      <GridList cellHeight={200} spacing={1} className={classes.gridList}>
+      {/* <GridList cellHeight={200} spacing={1} className={classes.gridList}>
         {tileData.map(tile => (
           <GridListTile key={tile.img} cols={tile.featured ?  2: 1} rows={tile.featured ? 3 : 1}>
             <img src={tile.img} alt={tile.title} />
@@ -98,14 +106,23 @@ function AdvancedGridList(props) {
             />
           </GridListTile>
         ))}
-      </GridList>
+      </GridList> */}
+      <Grid container spacing={24}>
+        {tileData.map(tile => (
+            <Grid item xs={3}>
+              <Paper className={classes.paper}>
+              <Product src={tile.img} alt={tile.title} title={tile.title} />
+              </Paper>
+            </Grid>
+        ))}
+      </Grid>
     </div>
   );
 }
 
-AdvancedGridList.propTypes = {
+Home.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(AdvancedGridList);
+export default withStyles(styles)(Home);
 

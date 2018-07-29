@@ -11,7 +11,7 @@ import LocalPhone from '@material-ui/icons/LocalPhone';
 import FilterVintage from '@material-ui/icons/FilterVintage';
 import AddShoppingCart from '@material-ui/icons/AddShoppingCart';
 import Search from '@material-ui/icons/Search';
-import Home from '@material-ui/icons/Home';
+import HomeIcon from '@material-ui/icons/Home';
 import Switch from '@material-ui/core/Switch';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
@@ -19,7 +19,6 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
-import Welcome from '../components/Welcome';
 import fleurblanchev from '../images/fleurblanchev.jpg';
 
 
@@ -88,14 +87,14 @@ class MenuAppBar extends React.Component {
        
         <AppBar position="static" style={{ backgroundColor: '#009688' }}>
           <Toolbar>
-          <IconButton href="/Welcome" className={classes.menuButton} color="inherit" aria-label="Menu">
-            <Home /> 
+          <IconButton href="/Home" className={classes.menuButton} color="inherit" aria-label="Menu">
+            <HomeIcon /> 
             </IconButton>                   
             <Typography variant="title" color="inherit" className={classes.flex}>
              Accueil
             </Typography>
 
-            <IconButton href="Plant.js" className={classes.menuButton} color="inherit" aria-label="Menu">
+            <IconButton href="/Plant" className={classes.menuButton} color="inherit" aria-label="Menu">
             <FilterVintage /> 
             </IconButton>                     
             <Typography variant="title" color="inherit" className={classes.flex}>
